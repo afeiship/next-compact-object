@@ -17,7 +17,9 @@ var obj1 = {
     { name: 'fei', str1: undefined, str2: false, active: false, test: 0, nillValue: null }
   ]
 };
-var result = nx.compactObject(obj1);
+
+nx.compactObject(obj1);
+
 /*
 {
   name: 'fei',
