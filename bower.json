@@ -1,7 +1,7 @@
 {
   "name": "next-compact-object",
-  "version": "0.0.1",
-  "description": "Shallow compact object for next",
+  "version": "1.0.0",
+  "description": "Deep compact object for next.",
   "main": "dist/next-compact-object.js",
   "authors": [
     "afei"

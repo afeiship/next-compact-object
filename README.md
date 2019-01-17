@@ -1,5 +1,5 @@
 # next-compact-object
-> Shallow compact object for next
+> Deep compact object for next.
 
 ## install:
 ```bash

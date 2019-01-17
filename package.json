@@ -1,7 +1,7 @@
 {
   "name": "next-compact-object",
   "version": "1.0.0",
-  "description": "Shallow compact object for next",
+  "description": "Deep compact object for next.",
   "homepage": "https://github.com/afeiship/next-compact-object",
   "author": {
     "name": "afei",
