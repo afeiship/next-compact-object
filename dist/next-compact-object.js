@@ -9,15 +9,11 @@
     var result = {};
     nx.forIn(inObject, function(key, value) {
       if (value !== null && typeof value === 'object') {
-        if (isArray(value)) {
-          var arrayValue = [];
-          nx.forEach(value, function(vValue) {
-            arrayValue.push(nx.compactObject(vValue));
-          });
-          result[key] = arrayValue;
-        } else {
-          result[key] = nx.compactObject(value);
-        }
+        result[key] = !isArray(value)
+          ? nx.compactObject(value)
+          : nx.map(value, function(_, vValue) {
+              return nx.compactObject(vValue);
+            });
       } else {
         value && (result[key] = value);
       }
