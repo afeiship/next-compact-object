@@ -1,0 +1,28 @@
+{
+  "name": "next-compact-object",
+  "version": "0.0.1",
+  "description": "Shallow compact object for next",
+  "main": "dist/next-compact-object.js",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/next-compact-object",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "build",
+    "src",
+    "gulp",
+    "gulpfile.js"
+  ]
+}
