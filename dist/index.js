@@ -3,7 +3,7 @@
  * description: Deep compact object for next.
  * homepage: https://github.com/afeiship/next-compact-object
  * version: 1.0.0
- * date: 2021-02-05 22:51:04
+ * date: 2021-02-05 22:51:55
  * license: MIT
  */
 
