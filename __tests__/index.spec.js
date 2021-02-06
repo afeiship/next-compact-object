@@ -42,5 +42,24 @@
         ]
       });
     });
+
+    test('customize is emtpy should be worked', () => {
+      var obj = {
+        name: '1',
+        test: {},
+        abc: true
+      };
+      var isEmpty = function (value) {
+        if (typeof value === 'object') {
+          return !Object.keys(value).length;
+        }
+        return false;
+      };
+
+      expect(nx.compactObject(obj, isEmpty)).toEqual({
+        name: '1',
+        abc: true
+      });
+    });
   });
 })();

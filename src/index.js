@@ -1,18 +1,24 @@
 (function () {
   var global = typeof window !== 'undefined' ? window : this || Function('return this')();
   var nx = global.nx || require('@jswork/next');
+  var DEFAULT_IS_EMPTY = function (value) {
+    return value == null;
+  };
 
-  nx.compactObject = function (inObject) {
+  nx.compactObject = function (inObject, inIsEmpty) {
     var result = {};
+    var isEmpty = inIsEmpty || DEFAULT_IS_EMPTY;
     nx.forIn(inObject, function (key, value) {
       if (value !== null && typeof value === 'object') {
-        result[key] = !Array.isArray(value)
-          ? nx.compactObject(value)
-          : nx.map(value, function (_, vValue) {
-              return nx.compactObject(vValue);
-            });
+        if (!isEmpty(value)) {
+          result[key] = !Array.isArray(value)
+            ? nx.compactObject(value, isEmpty)
+            : nx.map(value, function (_, vValue) {
+                return nx.compactObject(vValue, isEmpty);
+              });
+        }
       } else {
-        value != null && (result[key] = value);
+        !isEmpty(value) && (result[key] = value);
       }
     });
     return result;
