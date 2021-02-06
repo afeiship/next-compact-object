@@ -2,8 +2,8 @@
  * name: @jswork/next-compact-object
  * description: Deep compact object for next.
  * homepage: https://github.com/afeiship/next-compact-object
- * version: 1.0.0
- * date: 2021-02-06 10:27:26
+ * version: 1.0.1
+ * date: 2021-02-06 10:30:43
  * license: MIT
  */
 
