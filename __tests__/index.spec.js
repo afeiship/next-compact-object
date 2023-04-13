@@ -61,5 +61,15 @@
         abc: true
       });
     });
+
+    test('A value is primitve array', () => {
+      const obj = {
+        multiple: true,
+        value: [1, 3]
+      };
+
+      const res = nx.compactObject(obj);
+      expect(res).toEqual(obj);
+    });
   });
 })();
