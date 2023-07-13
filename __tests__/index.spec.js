@@ -81,5 +81,19 @@
       const res = nx.compactObject(obj, (v) => v === -1);
       expect(res).toEqual({ n1: 0, n2: 100 });
     });
+
+    test('compact if isEmptyFn is an array', () => {
+      const obj = {
+        n1: 0,
+        n2: 100,
+        n3: -1,
+        n4: null,
+        n5: undefined,
+        n6: true
+      };
+
+      const cptIf = nx.compactObject(obj, [null, undefined, -1]);
+      expect(cptIf).toEqual({ n1: 0, n2: 100, n6: true });
+    })
   });
 })();

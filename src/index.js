@@ -5,7 +5,9 @@ const isObj = (target) => target !== null && typeof target === 'object';
 
 nx.compactObject = function (inObject, inIsEmpty) {
   const result = {};
-  const isEmpty = inIsEmpty || isEmptyDefault;
+  const isArrayEmpty = Array.isArray(inIsEmpty) ? (v) => inIsEmpty.includes(v) : inIsEmpty;
+  const isEmpty = isArrayEmpty || isEmptyDefault;
+
   nx.forIn(inObject, function (key, value) {
     if (isObj(value)) {
       if (!isEmpty(value)) {
