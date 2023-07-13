@@ -71,5 +71,15 @@
       const res = nx.compactObject(obj);
       expect(res).toEqual(obj);
     });
+
+    test('compact if value has -1', () => {
+      const obj = {
+        n1: 0,
+        n2: 100,
+        n3: -1
+      };
+      const res = nx.compactObject(obj, (v) => v === -1);
+      expect(res).toEqual({ n1: 0, n2: 100 });
+    });
   });
 })();
