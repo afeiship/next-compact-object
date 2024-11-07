@@ -95,5 +95,22 @@
       const cptIf = nx.compactObject(obj, [null, undefined, -1]);
       expect(cptIf).toEqual({ n1: 0, n2: 100, n6: true });
     })
+
+    test('compact if value is an empty object', ()=>{
+      const obj = {
+        v1: null,
+        v2: null,
+        v3: {
+          a: null,
+          b: null,
+        }
+      };
+      const isEmpty = (v) => {
+        return v === null || (typeof v === 'object' && !Object.keys(v).length);
+      }
+
+      const res = nx.compactObject(obj, isEmpty);
+      expect(res).toEqual({});
+    })
   });
 })();
