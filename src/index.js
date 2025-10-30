@@ -12,7 +12,7 @@ nx.compactObject = function(inObject, inIsEmpty) {
     if (!isAry) {
       return nx.compactObject(obj, isEmpty);
     } else {
-      return nx.map(obj, function(_, subValue) {
+      return obj.map(function(subValue, _) {
         return isObj(subValue) ? nx.compactObject(subValue, isEmpty) : subValue;
       });
     }
